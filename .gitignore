@@ -7,4 +7,6 @@
 /public/bundles/
 /var/
 /vendor/
+/.vscode
+/APAMC.session.sql
 ###< symfony/framework-bundle ###
