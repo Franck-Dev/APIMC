@@ -32,17 +32,17 @@ class DatasResultsPolyms
     private $Piece;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="decimal", precision=3, scale=2)
      */
     private $Vit1min;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="decimal", precision=3, scale=2)
      */
     private $Vit1max;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="decimal", precision=5, scale=2)
      */
     private $Temp1max;
 
@@ -52,17 +52,17 @@ class DatasResultsPolyms
     private $DureePal1;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="decimal", precision=3, scale=2, nullable=true)
      */
     private $Vit2min;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="decimal", precision=3, scale=2, nullable=true)
      */
     private $Vit2max;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="decimal", precision=5, scale=2, nullable=true)
      */
     private $Temp2max;
 
@@ -72,17 +72,17 @@ class DatasResultsPolyms
     private $DureePal2;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="decimal", precision=3, scale=2, nullable=true)
      */
     private $Vit3min;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="decimal", precision=3, scale=2, nullable=true)
      */
     private $Vit3max;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="decimal", precision=5, scale=2, nullable=true)
      */
     private $Temp3max;
 
@@ -112,47 +112,47 @@ class DatasResultsPolyms
     private $Vide2max;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="decimal", precision=3, scale=2, nullable=true)
      */
     private $Press1min;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="decimal", precision=3, scale=2, nullable=true)
      */
     private $Press1max;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="decimal", precision=3, scale=2, nullable=true)
      */
     private $Press2min;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="decimal", precision=3, scale=2, nullable=true)
      */
     private $Press2max;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="decimal", precision=3, scale=2, nullable=true)
      */
     private $Press3min;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="decimal", precision=3, scale=2, nullable=true)
      */
     private $Press3max;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="decimal", precision=5, scale=2, nullable=true)
      */
     private $TempPressIn;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="decimal", precision=5, scale=2, nullable=true)
      */
     private $TempPressOut;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="decimal", precision=5, scale=2, nullable=true)
      */
     private $TempVideOut;
 
@@ -160,6 +160,11 @@ class DatasResultsPolyms
      * @ORM\Column(type="integer", nullable=true)
      */
     private $VideTempalFin;
+
+    /**
+     * @ORM\Column(type="decimal", precision=5, scale=2, nullable=true)
+     */
+    private $DureeFinPress;
 
     public function getId(): ?int
     {
@@ -498,6 +503,18 @@ class DatasResultsPolyms
     public function setVideTempalFin(?int $VideTempalFin): self
     {
         $this->VideTempalFin = $VideTempalFin;
+
+        return $this;
+    }
+
+    public function getDureeFinPress(): ?string
+    {
+        return $this->DureeFinPress;
+    }
+
+    public function setDureeFinPress(?string $DureeFinPress): self
+    {
+        $this->DureeFinPress = $DureeFinPress;
 
         return $this;
     }
