@@ -91,6 +91,16 @@ class DatasResultsPolyms
      */
     private $DureePal3;
 
+        /**
+     * @ORM\Column(type="decimal", precision=3, scale=2)
+     */
+    private $VitFroidmin;
+
+    /**
+     * @ORM\Column(type="decimal", precision=3, scale=2)
+     */
+    private $VitFroidmax;
+
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
@@ -515,6 +525,30 @@ class DatasResultsPolyms
     public function setDureeFinPress(?string $DureeFinPress): self
     {
         $this->DureeFinPress = $DureeFinPress;
+
+        return $this;
+    }
+
+    public function getVitFroidmin(): ?string
+    {
+        return $this->VitFroidmin;
+    }
+
+    public function setVitFroidmin(string $VitFroidmin): self
+    {
+        $this->VitFroidmin = $VitFroidmin;
+
+        return $this;
+    }
+
+    public function getVitFroidmax(): ?string
+    {
+        return $this->VitFroidmax;
+    }
+
+    public function setVitFroidmax(string $VitFroidmax): self
+    {
+        $this->VitFroidmax = $VitFroidmax;
 
         return $this;
     }
