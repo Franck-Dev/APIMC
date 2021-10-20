@@ -2,15 +2,17 @@
 
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiResource;
-use App\Repository\DatasPolymsRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\DatasPolymsRepository;
+use Doctrine\Common\Collections\Collection;
+use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ApiResource()
  * @ORM\Entity(repositoryClass=DatasPolymsRepository::class)
+ * @UniqueEntity("Name")
  */
 class DatasPolyms
 {
@@ -60,6 +62,11 @@ class DatasPolyms
      * @ORM\OneToMany(targetEntity=DatasResultsPolyms::class, mappedBy="NumPolym")
      */
     private $datasResultsPolyms;
+
+    /**
+     * @ORM\Column(type="string", length=55, nullable=true)
+     */
+    private $chargementTech;
 
     public function __construct()
     {
@@ -181,6 +188,18 @@ class DatasPolyms
                 $datasResultsPolym->setNumPolym(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getChargementTech(): ?string
+    {
+        return $this->chargementTech;
+    }
+
+    public function setChargementTech(?string $chargementTech): self
+    {
+        $this->chargementTech = $chargementTech;
 
         return $this;
     }
